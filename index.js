@@ -26,7 +26,8 @@ const updateMessage = message =>
 
 const spam = count => {
 	updateProgress(spamCount - count)
-	if (count <= 0) return updateMessage(undefined)
+	if (count <= 0)
+		return updateMessage(undefined)
 	const message = {
 		'First-Name': randomName(),
 		'Last-Name': randomName(),

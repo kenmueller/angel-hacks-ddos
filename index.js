@@ -22,7 +22,7 @@ const updateProgress = progress =>
 	document.querySelectorAll('.spam-progress').forEach(element => element.innerHTML = `<b>${progress}</b> / <b>${spamCount}${progress === spamCount ? '<br><br>Done!' : ''}</b>`)
 
 const updateMessage = message =>
-	document.querySelectorAll('.spam-message').forEach(element => element.innerHTML = message ? `<br>First name: <b>${message['First-Name']}</b><br>Last name: <b>${message['Last-Name']}</b><br>Email: <b>${message['email']}</b><br>School: <b>${message['School']}</b><br>Gender: <b>${message['Gender']}</b><br>Comment: ${message['other']}` : '')
+	document.querySelectorAll('.spam-message').forEach(element => element.innerHTML = message ? `First name: <b>${message['First-Name']}</b><br>Last name: <b>${message['Last-Name']}</b><br>Email: <b>${message['email']}</b><br>School: <b>${message['School']}</b><br>Gender: <b>${message['Gender']}</b><br>Comment: ${message['other']}` : '')
 
 const spam = count => {
 	updateProgress(spamCount - count)

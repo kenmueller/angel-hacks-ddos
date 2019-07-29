@@ -29,7 +29,7 @@ const spam = count => {
 	if (count <= 0) return updateMessage(undefined)
 	const message = {
 		'First-Name': randomName(),
-		'Last-Name': randomEmail(),
+		'Last-Name': randomName(),
 		'School': randomName(),
 		'Gender': randomGender(),
 		'other': randomComment(),

@@ -18,8 +18,11 @@ const randomComment = () =>
 const randomGender = () =>
 	`${Math.random() < 0.5 ? '' : 'fe'}male`
 
-const updateProgress = progress =>
-	document.querySelectorAll('.spam-progress').forEach(element => element.innerHTML = `<b>${progress}</b> / <b>${spamCount}${progress === spamCount ? '<br><br>Done!' : ''}</b>`)
+const updateProgress = progress => {
+	const isDone = progress === spamCount
+	document.title = `Angel Hacks DDoS${isDone ? '' : ` - ${progress} / ${spamCount}`}`
+	document.querySelectorAll('.spam-progress').forEach(element => element.innerHTML = `<b>${progress}</b> / <b>${spamCount}${isDone ? '<br><br>Done!' : ''}</b>`)
+}
 
 const updateMessage = message =>
 	document.querySelectorAll('.spam-message').forEach(element => element.innerHTML = message ? `First name: <b>${message['First-Name']}</b><br>Last name: <b>${message['Last-Name']}</b><br>Email: <b>${message['email']}</b><br>School: <b>${message['School']}</b><br>Gender: <b>${message['Gender']}</b><br>Comment: ${message['other']}` : '')
